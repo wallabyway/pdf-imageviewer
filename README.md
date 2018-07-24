@@ -41,10 +41,12 @@ Click on the measure tool and calibrate to get started.
 
 Similarly, modify the CSS to create a custom markup UI.
 
+## Steps to create your own:
 
-## Pulling a Terrain map
 
-To provide some sample content for my demo, I'm going to pull a tile-pyramid from OpenMapView, specifically, a terrain map, so I can demostrate the measure tool.
+### Pulling a Terrain map
+
+To provide some sample content for my demo, I'm going to pull a tile-pyramid from [OpenMapView](https://www.openstreetmap.org), specifically, a terrain map, so I can demostrate the measure tool.
 
 Here is my curl script:
 
@@ -52,27 +54,43 @@ Here is my curl script:
 curl openmaps.com -leaflet -folder outtiles -l 14 -x 100 -y 100
 ```
 
+Now I modify the bubble.json file to point to the new folder containing all those image tiles.
 
-## Converting an OCR image
+When I open the index.html file, I now see my terrain map, which I can zoom in and out to get more terrain details. I can also add markup and measurements.
 
-I have really large OCR image and I need to prepare it for the viewer, so I'll need to chop up the large image into tiles... specifically, a tile-pyramid.  I'll use [ImageMagik](imagemagik.com) for this.
+![dummyImage.jpg](dummyImage.jpg)
 
-From the commandline, I type:
+Here's a live demo: [TERRAIN DEMO]()
+
+
+
+### Converting an OCR image
+
+Say you have 'OCR / scanned' an image and got a really large .TIFF file, that you want to view in a browser.  It's too big and clunky by itself and... you want to add markup and measurements.
+
+So, let's use the Forge Viewer to view it and use Forge Viewer's fast loading and built-in markup and measurement features...
+
+I'll first need to convert the TIFF image to a jpeg tile-pyramid. I'll use [ImageMagik](imagemagik.com) to do this.
+
+From the commandline, type in...
 
 ```
-> imagemagik large-OCR-file.tif -leaflet -folder outtiles
+convert image.tif -resize 1.5625% -crop 256x256 +repage +adjoin out/1/tile_1_%d.jpg
+convert image.tif -resize 3.125% -crop 256x256 +repage +adjoin out/2/tile_2_%d.jpg
+convert image.tif -resize 6.25% -crop 256x256 +repage +adjoin out/3/tile_3_%d.jpg
+convert image.tif -resize 12.5% -crop 256x256 +repage +adjoin out/4/tile_4_%d.jpg
+convert image.tif -resize 25% -crop 256x256 +repage +adjoin out/5/tile_5_%d.jpg
+convert image.tif -resize 50% -crop 256x256 +repage +adjoin out/6/tile_6_%d.jpg
+convert image.tif -crop 256x256 +repage +adjoin out/7/tile_7_%d.jpg
 ```
 
+Then copy and update the bubble.json file, so that it points to the out/z/y/x.jpg path.
 
-This is just to provid e
- Terrain or 
-This demo of the Forge viewer, shows how you can load in a really really large image, cut up as a series of tiles, and load them into the viewer.
+Now open the index.html file and you should see the following:
 
-The large image (say a 10800 x 10800 TIF image), is sliced up into tiles, at different LOD's (level of details), to form what I call an 'image tile pyramid'.  Here's a diagram explaining:
+![](example.jpg)
 
-Diagram of "Image Tile Pyramid"
 
-## Steps to create your own:
 
 1. We use the following imageMagik script to convert a large TIF image into the tiles.  Each level of detail will be put into it's own seperate folder (z-index).
 
