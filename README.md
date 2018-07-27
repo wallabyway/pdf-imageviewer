@@ -56,8 +56,8 @@ For a faster loading experience, the viewer, can  load, a low-quality 'preview' 
 
 Say Paris is at level 14.  First, load the single of paris, probably level 12, and stretch it to fill the screen (blurry).  Now, switch to level 13, then level 14 to show gradually sharper and sharper detail loading in.
 
-<p><img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/12/0_0.jpeg" width=256>
-<img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/11/0_0.jpeg" width=256></p>
+<span><img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/12/0_0.jpeg" width=256>
+<img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/11/0_0.jpeg" width=256></span>
 
 You can see this in the animation above.  The Forge Viewer is showing a PDF made of tile images.  You can see the tiles streaming in slowly in the debug console, while the display slowly sharpens.  It starts with lower resolution tiles (stretched to fit), and gradually loads in the higher resolution tiles (not stretched).
 
@@ -104,7 +104,7 @@ With the full width and height of the terrain image coming to 6k x 6k pixels, fo
 Now I modify the [bubble.json](https://github.com/wallabyway/pdf-imageviewer/tree/master/docs/topo/bubble.json) file to point to the new folder containing all those image tiles.  And I upated the pixel resolution too.
 
 
-When I open the [index.html](https://github.com/wallabyway/pdf-imageviewer/tree/master/docs/topo/index.html) file, and point the documentId to the topo/bubble.json file (Note: I setup this based on window.location.hash) where the #topo denotes the folder).
+When I open the [index.html](https://github.com/wallabyway/pdf-imageviewer/tree/master/docs/index.html) file, and point the documentId to the topo/bubble.json file (Note: I setup this based on window.location.hash) where the #topo denotes the folder).
 
 I now see my terrain map !
 
