@@ -25,16 +25,16 @@ Let's dig in...
 
 At the top of the pyramid, level 0, a single tile, it shows a blurry, low-resolution, version of the map-of-the-world image.
 
-Like the terrain map example: 
+Like the terrain map example (left image): 
 
 ![](https://wallabyway.github.io/pdf-imageviewer/topo/9/0-0.png)
-
-The next level down, level 1, the map-of-the-world is split into four tiles and the resolution is higher, less blurry.
-
 ![](https://wallabyway.github.io/pdf-imageviewer/topo/10/0-0.png)
 ![](https://wallabyway.github.io/pdf-imageviewer/topo/12/2-0.png)
 
-Similarly level 2, we now have 16 tiles.  Sharper, more detail.
+The next level down, level 1 (middle image), the map-of-the-world is split into four tiles and the resolution is higher, less blurry.
+
+
+Similarly level 2 (right image), we now have 16 tiles.  Sharper, more detail.
 
 
 
@@ -56,8 +56,8 @@ For a faster loading experience, the viewer, can  load, a low-quality 'preview' 
 
 Say Paris is at level 14.  First, load the single of paris, probably level 12, and stretch it to fill the screen (blurry).  Now, switch to level 13, then level 14 to show gradually sharper and sharper detail loading in.
 
-<img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/12/0_0.jpeg" width=256>
-<img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/11/0_0.jpeg" width=256>
+<p><img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/12/0_0.jpeg" width=256>
+<img src="https://wallabyway.github.io/pdf-imageviewer/sheet1/11/0_0.jpeg" width=256></p>
 
 You can see this in the animation above.  The Forge Viewer is showing a PDF made of tile images.  You can see the tiles streaming in slowly in the debug console, while the display slowly sharpens.  It starts with lower resolution tiles (stretched to fit), and gradually loads in the higher resolution tiles (not stretched).
 
