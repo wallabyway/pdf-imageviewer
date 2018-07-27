@@ -88,17 +88,17 @@
                     "type": "view",
                     "role": "2d",
                     "name": "INITIAL",
-                    "viewbox": [0, 0, 11, 8.5]
+                    "viewbox": [0, 0, 11, 11]
                 }, {
                     "guid": "6804b706-1300-45a8-a055-38f23b65de09",
                     "type": "resource",
                     "role": "leaflet",
-                    "urn": "sheet1/{z}/{x}_{y}.jpeg",
+                    "urn": "topo/{z}/{y}-{x}.png",
                     "mime": "leaflet/jpeg",
-                    "resolution": [6600, 5100],
+                    "resolution": [6912, 6912],
                     "paperUnits": "in",
                     "paperWidth": 11,
-                    "paperHeight": 8.5
+                    "paperHeight": 11
                 }, {
                     "guid": "e841e531-afbf-44af-91aa-0c8a52e74924",
                     "type": "resource",
@@ -140,17 +140,17 @@
                     "type": "view",
                     "role": "2d",
                     "name": "INITIAL",
-                    "viewbox": [0, 0, 11, 8.5]
+                    "viewbox": [0, 0, 11, 11]
                 }, {
                     "guid": "0088f224-8929-43fd-ac00-72b0ed3a6973",
                     "type": "resource",
                     "role": "leaflet",
-                    "urn": "sheet1/{z}/{x}_{y}.jpeg",
+                    "urn": "topo/{z}/{y}-{x}.png",
                     "mime": "leaflet/jpeg",
-                    "resolution": [6600, 5100],
+                    "resolution": [6912, 6912],
                     "paperUnits": "in",
                     "paperWidth": 11,
-                    "paperHeight": 8.5
+                    "paperHeight": 11
                 }, {
                     "guid": "a2cc354d-a193-4d40-a1c4-edd57885d487",
                     "type": "resource",

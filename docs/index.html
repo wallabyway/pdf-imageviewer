@@ -18,10 +18,12 @@
     </style>
 
     <link rel="stylesheet" href="style.min.css" type="text/css">
+    <link rel="stylesheet" href="./extensions/Markups/Markups.min.css" type="text/css">
 
     <script src="three.min.js"></script>
     <script src="wgs.min.js"></script>
     <script src="viewer3D.min.js"></script>
+    <script src="./extensions/Markups/MarkupsGui.css"></script>
 
 </head>
 
@@ -31,7 +33,9 @@
 </body>
 
 <script>
-var documentId = "pdf-imageviewer/sheet1/bubble.json";
+var szInput = ( location.hash.slice(1) || "sheet1" );
+var documentId = `./${szInput}/bubble.json`;
+
 var viewer;
 
 function initializeViewer() {
@@ -40,6 +44,12 @@ function initializeViewer() {
         env: "Local",
         useADP: false,
         documentId: documentId
+    }
+
+    function onLoadSuccess() {
+        console.log('on success');
+        viewer.loadExtension("Autodesk.Viewing.MarkupsCore")
+        viewer.loadExtension("Autodesk.Viewing.MarkupsGui")
     }
 
     Autodesk.Viewing.Initializer( options, function() {
@@ -51,7 +61,7 @@ function initializeViewer() {
                 if(geometryItems.length > 0) {
                     var loadOptions = {};
                     var path = document.getViewablePath(geometryItems[0], loadOptions);
-                    viewer.load(path, null, null, null, document.acmSessionId, loadOptions);
+                    viewer.load(path, null, onLoadSuccess, null, document.acmSessionId, loadOptions);
                 }
 
             }
