@@ -18,12 +18,13 @@
     </style>
 
     <link rel="stylesheet" href="style.min.css" type="text/css">
-    <link rel="stylesheet" href="./extensions/Markups/Markups.min.css" type="text/css">
+    <link rel="stylesheet" href="./extensions/Markups/MarkupsGui.css" type="text/css">
 
     <script src="three.min.js"></script>
     <script src="wgs.min.js"></script>
     <script src="viewer3D.min.js"></script>
-    <script src="./extensions/Markups/MarkupsGui.css"></script>
+    <script src="./extensions/Markups/Markups.min.js"></script>
+    <script src="./extensions/Markups/MarkupsGui.min.js"></script>
 
 </head>
 
@@ -34,7 +35,7 @@
 
 <script>
 var szInput = ( location.hash.slice(1) || "sheet1" );
-var documentId = `./${szInput}/bubble.json`;
+var documentId = `./pdf-imageviewer/${szInput}/bubble.json`;
 
 var viewer;
 
