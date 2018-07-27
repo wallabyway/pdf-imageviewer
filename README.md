@@ -110,8 +110,7 @@ I now see my terrain map !
 
 I can zoom in and out to get more terrain details. I can also add markup and measurements.
 
-Here's a live demo: [TERRAIN DEMO]()
-
+Here's a live demo: [TERRAIN DEMO](https://wallabyway.github.io/pdf-imageviewer/index.html#topo)
 
 
 ### Converting an OCR image
